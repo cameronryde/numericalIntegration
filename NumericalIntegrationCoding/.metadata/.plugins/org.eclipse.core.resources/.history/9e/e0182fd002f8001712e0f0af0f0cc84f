@@ -1,0 +1,5 @@
+package numericalIntegration;
+
+public class Midpoint {
+
+}

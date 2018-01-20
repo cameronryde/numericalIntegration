@@ -1,0 +1,39 @@
+package numericalIntegration;
+
+public class Simpsons {
+	
+	public static double f(double[] coeffs, double x) {
+		//our formula that was given
+		//f(x)=Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F
+		return (coeffs[0]*Math.pow(x, 5))+(coeffs[1]*Math.pow(x, 4))+
+				(coeffs[2]*Math.pow(x, 3))+(coeffs[3]*Math.pow(x, 2))+
+				(coeffs[4]*x)+coeffs[5];
+	}
+
+
+	public static double getSimps(double a, double b, int n, double[] coeffs) {
+		
+		
+		//return ((b-a)/6)*(f(coeffs, a) + 4*f(coeffs, (a+b)/2)+ f(coeffs, b));
+		
+		                    // precision parameter
+	      double h = (b - a) / (n - 1);     // step size
+	 
+	      // 1/3 terms
+	      double sum = 1.0 / 3.0 * (f(coeffs, a) + f(coeffs, b));
+
+	      // 4/3 terms
+	      for (int i = 1; i < n - 1; i += 2) {
+	         double x = a + h * i;
+	         sum += 4.0 / 3.0 * f(coeffs, x);
+	      }
+
+	      // 2/3 terms
+	      for (int i = 2; i < n - 1; i += 2) {
+	         double x = a + h * i;
+	         sum += 2.0 / 3.0 * f(coeffs, x);
+	      }
+
+	      return sum * h;
+	}
+}

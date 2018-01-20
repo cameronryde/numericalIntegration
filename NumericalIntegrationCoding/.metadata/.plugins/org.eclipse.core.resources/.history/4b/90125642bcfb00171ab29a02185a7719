@@ -1,0 +1,60 @@
+//Cameron Ryde
+//Numerical Integration
+
+package numericalIntegration;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	
+	public static void main(String[] args) {
+		
+		Scanner keyboard = new Scanner(System.in);
+		
+		double a =0 , b=0;
+		int n;
+		double[] coefficients = new double[6];
+		
+		System.out.print("a = ");
+		a = keyboard.nextDouble();
+		System.out.print("b = ");
+		b = keyboard.nextDouble();
+		System.out.print("n = ");
+		n = keyboard.nextInt();
+		
+		System.out.print("A = ");
+		coefficients[0] = keyboard.nextDouble();
+		System.out.print("B = ");
+		coefficients[1] = keyboard.nextDouble();
+		System.out.print("C = ");
+		coefficients[2] = keyboard.nextDouble();
+		System.out.print("D = ");
+		coefficients[3] = keyboard.nextDouble();
+		System.out.print("E = ");
+		coefficients[4] = keyboard.nextDouble();
+		System.out.print("F = ");
+		coefficients[5] = keyboard.nextDouble();
+		
+		
+		
+		keyboard.close();
+		
+		double exact = Exact.getExact(coefficients, a, b);
+		double midpoint = Midpoint.getMidpoint(a, b, n, coefficients);
+		double trapezoidal = Trapezoidal.getTrapezoid(a, b, n, coefficients);
+		double simpsons = Simpsons.getSimps(a, b, n, coefficients);
+				
+		
+		System.out.printf("Exact: %.8f%n", exact);
+		System.out.printf("Midpoint: %.8f%n", midpoint );
+		System.out.printf("Midoint error: %.8f%n", (midpoint - exact)/exact);
+		System.out.printf("Trapezoidal: %.8f%n", trapezoidal );
+		System.out.printf("Trapezoidal error: %f%n", (trapezoidal - exact)/exact);
+		System.out.printf("Simpson's: %f%n", simpsons );
+		System.out.printf("Simpson's error: %f", (simpsons - exact)/exact);
+
+		
+	}
+
+}

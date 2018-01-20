@@ -1,0 +1,46 @@
+package numericalIntegration;
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		double a, b;
+		int n;
+		double[] coefficients = new double[6];
+		
+		System.out.print("a = ");
+		a = keyboard.nextDouble();
+		System.out.print("b = ");
+		b = keyboard.nextDouble();
+		System.out.print("n = ");
+		n = keyboard.nextInt();
+		
+		System.out.print("A = ");
+		coefficients[0] = keyboard.nextDouble();
+		System.out.print("B = ");
+		coefficients[1] = keyboard.nextDouble();
+		System.out.print("C = ");
+		coefficients[2] = keyboard.nextDouble();
+		System.out.print("D = ");
+		coefficients[3] = keyboard.nextDouble();
+		System.out.print("E = ");
+		coefficients[4] = keyboard.nextDouble();
+		System.out.print("F = ");
+		coefficients[5] = keyboard.nextDouble();
+		
+		
+		keyboard.close();
+		
+		Midpoint mid = new Midpoint();
+		Trapezoidal trap = new Trapezoidal();
+		Simpsons simp = new Simpsons();
+		Exact exct = new Exact(); 
+		
+		System.out.printf("Exact: %f", exct.exact(coefficients, a, b));
+
+	}
+
+}

@@ -1,0 +1,27 @@
+package numericalIntegration;
+
+public class Simpsons {
+	
+	public static double f(double[] coeffs, double x) {
+		//our formula that was given
+		//f(x)=Ax^5 + Bx^4 + Cx^3 + Dx^2 + Ex + F
+		return (coeffs[0]*Math.pow(x, 5))+(coeffs[1]*Math.pow(x, 4))+
+				(coeffs[2]*Math.pow(x, 3))+(coeffs[3]*Math.pow(x, 2))+
+				(coeffs[4]*x)+coeffs[5];
+	}
+
+
+	public static double getSimps(double a, double b, int n, double[] coeffs) {
+		double sum = 0;
+		double Sum = 0;
+		int h = (int) Math.round((b-a)/n);
+		
+		for (int i = 1; i<= n-1; i++) {
+			Sum += f(coeffs, a+2*(i-1)*h);
+		}
+		
+		sum = h/3*(f(coeffs,a) + f(coeffs,b) + 2*sum + 4*Sum);
+
+		return sum;
+	}
+}

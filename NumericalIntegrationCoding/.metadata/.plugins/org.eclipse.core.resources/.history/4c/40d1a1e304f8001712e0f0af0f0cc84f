@@ -1,0 +1,29 @@
+package numericalIntegration;
+
+public class Midpoint {
+	
+	double f(double[] coeffs, double x) {
+		double total = 0;
+		
+		for(int i = 6; i >= 0; i--) {
+			total = total + coeffs[i] * (Math.pow(x, i));
+		} 
+		
+		return total;
+	}
+	
+	public double getMidpoint(double a, double b, int n, double[] coeffs) {
+		//Rect Width = b-a/n
+		double rectWidth = (b-a)/n;
+		double total = 0;
+		
+		double x = a + (.5 * rectWidth);
+		
+		for(int i =0; i <= n; i++) {
+			total = total + (rectWidth * f(coeffs, x));  
+		}
+		
+		
+		return total;
+	}
+}

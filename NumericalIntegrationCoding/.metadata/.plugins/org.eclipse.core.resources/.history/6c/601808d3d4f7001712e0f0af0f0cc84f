@@ -1,0 +1,29 @@
+package numericalIntegration;
+
+import java.util.Scanner;
+
+public class main {
+
+	
+	public static void main(String[] args) {
+		Scanner keyboard = new Scanner(System.in);
+		
+		double a, b;
+		int n;
+		double[] coefficients = new double[6];
+		
+		
+		
+		
+		keyboard.close();
+		
+		Midpoint mid = new Midpoint();
+		Trapezoidal trap = new Trapezoidal();
+		Simpsons simp = new Simpsons();
+		Exact exct = new Exact(); 
+		
+		System.out.printf("Exact: %f", exct.exact(coefficients, a, b));
+
+	}
+
+}

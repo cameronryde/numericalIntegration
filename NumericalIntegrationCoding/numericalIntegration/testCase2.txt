@@ -1,0 +1,12 @@
+Function: 1.0x^5 + -2.0x^4 + 3.0x^3 + -4.0x^2 + 5.0x + 6.0
+a: -1.300000
+b: 4.600000
+n: 120
+
+Exact: 1037.93939683
+Midpoint: 1037.78265604
+Midoint error: -0.00015101
+Trapezoidal: 1038.25288382
+Trapezoidal error: 0.000302
+Simpson's: 1037.939399
+Simpson's error: 0.000000

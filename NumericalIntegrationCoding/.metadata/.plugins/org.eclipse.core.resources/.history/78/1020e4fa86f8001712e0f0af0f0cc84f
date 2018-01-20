@@ -1,0 +1,44 @@
+package numericalIntegration;
+
+public class Exact{
+	
+	public double fIntgrl(double coeffs[], double x) {
+		return ((coeffs[0] * (Math.pow(x,6)))/6)+((coeffs[1] * (Math.pow(x,5)))/5) + 
+		  ((coeffs[2] * (Math.pow(x,4)))/4) + ((coeffs[3] * (Math.pow(x,3)))/3) + 
+		  ((coeffs[4] * (Math.pow(x,2)))/2) + ((coeffs[5] * x)/1);
+		
+		//return ((coeff)*(Math.pow(x, exponent+1)))/(exponent+1);
+	}
+	
+	public double getExact(double[] coeffs, double a, double b) {
+		//(Ax^6/6)+(Bx^5/5)+(Cx^4/4)+(Dx^3/3)+(Ex^2/2)+(Fx/1)
+		
+		double integralA = 0;
+		double integralB = 0;
+		
+		int index = 0;
+		
+		return Math.abs(fIntgrl(coeffs, a) - fIntgrl(coeffs, b));
+		/*
+		for(int i = 5; i >= 0; i--) {
+			integralA = integralA 
+					+ fIntgrl(coeffs[index], a ,i);
+			index++;
+		}
+		index = 0;
+		for(int i = 5; i >= 0; i--) {
+			integralB = integralB 
+					+ fIntgrl(coeffs[index], b, i);
+			index++;
+		}
+	
+		
+		
+			return Math.abs(integralA - integralB);
+		*/
+		
+	}
+	
+	
+}
+
