@@ -1,0 +1,7 @@
+This project was created for an assignment in Calculus 2.
+It has four classes:
+Main is the main class to get user input and write to the file
+Exact calculates the exact value of the area under the curve using numerical integration: https://revisionmaths.com/advanced-level-maths-revision/pure-maths/calculus/area-under-curve
+Midpoint utilizes the midpoint method to approximate the area: http://www.dummies.com/education/math/calculus/how-to-approximate-area-with-midpoint-rectangles/
+Trapezoidal uses the trapexoidal rule to approximate: https://en.wikipedia.org/wiki/Trapezoidal_rule
+Simpsons uses the Simpson's rule to approximate: https://en.wikipedia.org/wiki/Simpson%27s_rule
